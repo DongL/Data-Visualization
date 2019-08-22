@@ -11,3 +11,6 @@ A manifold learning model (Uniform Manifold Approximation and Projection: UMAP) 
 -	Category II: Texas, California, New York, Illinois, Georgia, Massachusetts, Pennsylvania, Tennessee, North Carolina, Minnesota, Florida, New Jersey, Virginia, Maryland, Colorado
 -	Category III: Louisiana, Nevada, Mississippi, West Virginia, Idaho, Delaware, Arkansas, Maine, Vermont, Rhode Island, Montana, Wyoming, Hawaii, District of Columbia
 -	Category IV: Ohio, Michigan, Indiana, Wisconsin, Arizona, Missouri, Kansas, Iowa, Nebraska, Oklahoma, South Dakota, North Dakota
+
+---
+[Detailed report](https://github.com/DongL/Data-Visualization/blob/master/Dviz%20Project%20Report.pdf)
