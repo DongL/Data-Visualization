@@ -13,4 +13,6 @@ A manifold learning model (Uniform Manifold Approximation and Projection: UMAP) 
 -	Category IV: Ohio, Michigan, Indiana, Wisconsin, Arizona, Missouri, Kansas, Iowa, Nebraska, Oklahoma, South Dakota, North Dakota
 
 ---
-[Detailed report](https://github.com/DongL/Data-Visualization/blob/master/Dviz%20Project%20Report.pdf)
+[Report](https://github.com/DongL/Data-Visualization/blob/master/Dviz%20Project%20Report.pdf)
+[PPT](https://github.com/DongL/Data-Visualization/blob/master/Dviz_Project_PPT.pdf)
+[Jupyter Notebook](https://github.com/DongL/Data-Visualization/blob/master/Dviz_Project_notebook.ipynb)
