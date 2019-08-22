@@ -5,7 +5,7 @@ This project aims to use various visualization techniques and machine learning m
 
 A manifold learning model (Uniform Manifold Approximation and Projection: UMAP) was built using a dataset that included a number of export-related economic data (e.g. economic aggregates (GDP), exports to major trading partners and their fractions, exports to China and their fractions), as well as geographical location and political oriention of individual U.S. states. The optimal clustering was achieved with n_neighbor = 3 and min-dist = 0.001, which successfully yielded 4 meaningful structures of U.S. state clusters.
 
-![classification](classification.png)
+![classification](image/geographic_distribution.png)
 
 -	Category I: Washington, South Carolina, Oregon, Alabama, Kentucky, Puerto Rico, New Mexico, Alaska, Connecticut, Utah, New Hampshire
 -	Category II: Texas, California, New York, Illinois, Georgia, Massachusetts, Pennsylvania, Tennessee, North Carolina, Minnesota, Florida, New Jersey, Virginia, Maryland, Colorado
