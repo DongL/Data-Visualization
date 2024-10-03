@@ -151,19 +151,19 @@ Four distinct clusters emerged, each with unique demographic and clinical profil
 
 This comprehensive analysis successfully identified key clinical features and blood biomarkers associated with the development of incident diabetes. The predictive modeling efforts yielded a logistic regression model with high discriminative ability (Test AUC = 0.8433) using selected blood biomarkers, demonstrating potential for risk assessment in clinical settings.
 
-# Key Achievements:
+## Key Achievements:
 
 - Feature Identification: Highlighted critical clinical and biomarker predictors of diabetes.
 - Predictive Modeling: Developed and optimized a robust logistic regression model with significant predictive performance.
 - Clustering Analysis: Unveiled distinct participant profiles based on biomarker data, offering insights into heterogeneous pathways of diabetes development.
 
-# Limitations and Future Work:
+## Limitations and Future Work:
 
 - Model Sensitivity: The current models exhibit lower sensitivity in detecting diabetic cases, suggesting the need for improved recall and precision.
 - Computational Constraints: Limited exploration of hyperparameter spaces and model architectures due to resource restrictions.
 - Advanced Modeling: Future studies could incorporate deep learning techniques, such as Convolutional Neural Networks (CNNs), to enhance model performance and sensitivity.
 
-# Conclusion:
+## Conclusion:
 
 The project underscores the value of integrating clinical and biomarker data in understanding and predicting diabetes risk. The methodologies applied, from data preprocessing and EDA to sophisticated modeling and clustering techniques, provide a solid foundation for further research and application in public health strategies aimed at diabetes prevention and management
 
