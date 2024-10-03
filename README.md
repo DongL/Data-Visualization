@@ -2,7 +2,9 @@
 
 ---
 
-[Jupyter Notebook](https://github.com/DongL/Data-Visualization/blob/master/Diabetes_risk_prediction.ipynb)
+[Analysis Report](https://github.com/DongL/Data-Visualization/blob/master/Diabetes_risk_prediction.html)
+
+The html file can be previewed using [Github Html Preview](https://htmlpreview.github.io).
 ---
 
 # 1. Introduction
