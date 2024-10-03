@@ -1,8 +1,8 @@
-# Diabetes Risk Prediction and Biomarker Clustering Analysis Report
+# Project I: Diabetes Risk Prediction and Biomarker Clustering Analysis Report
 
 ---
 
-Author: Dong Liang
+[Jupyter Notebook](https://github.com/DongL/Data-Visualization/blob/master/Diabetes_risk_predcition.ipynb)
 ---
 
 # 1. Introduction
@@ -169,7 +169,7 @@ The project underscores the value of integrating clinical and biomarker data in 
 
 ---
 
-# Visualization of the Trade History between China and U.S. States
+# Project II: Visualization of the Trade History between China and U.S. States
 
 [Report](https://github.com/DongL/Data-Visualization/blob/master/Dviz%20Project%20Report.pdf)
 
