@@ -40,8 +40,8 @@ A significant proportion (30.1%) of the columns had less than 20% missing data. 
 
 ## 3.3. Distribution Analysis
 
-Blood Biomarkers: Histograms of randomly selected mtb_ biomarkers indicated non-normal distributions with right skewness and outliers, justifying log transformations for normalization.
-Clinical Data: Distribution analyses for clinical features revealed patterns that informed subsequent modeling decisions.
+- Blood Biomarkers: Histograms of randomly selected mtb_ biomarkers indicated non-normal distributions with right skewness and outliers, justifying log transformations for normalization.
+- Clinical Data: Distribution analyses for clinical features revealed patterns that informed subsequent modeling decisions.
 
 ## 3.4. Multicollinearity Assessment
 
