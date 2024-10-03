@@ -2,7 +2,7 @@
 
 ---
 
-[Jupyter Notebook](https://github.com/DongL/Data-Visualization/blob/master/Diabetes_risk_predcition.ipynb)
+[Jupyter Notebook](https://github.com/DongL/Data-Visualization/blob/master/Diabetes_risk_prediction.ipynb)
 ---
 
 # 1. Introduction
