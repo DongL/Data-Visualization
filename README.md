@@ -4,7 +4,7 @@
 
 [Analysis Report](https://github.com/DongL/Data-Visualization/blob/master/Diabetes_risk_prediction.html)
 
-The html file can be previewed using [Github Html Preview](https://htmlpreview.github.io).
+The Analysis Report (html file) can be previewed using [Github Html Preview](https://htmlpreview.github.io).
 ---
 
 # 1. Introduction
@@ -68,7 +68,8 @@ Univariate logistic regression analyses identified several clinical features sig
 - Hypertension
 - HbA1c Levels
 - Fasting Insulin Levels
-  Conversely, features such as HDL cholesterol and exercise habits showed protective associations against diabetes development.
+
+Conversely, features such as HDL cholesterol and exercise habits showed protective associations against diabetes development.
 
 ### 4.1.2. Blood Biomarkers
 
