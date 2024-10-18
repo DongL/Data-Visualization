@@ -7,7 +7,9 @@ The analysis notebooks were prepared to predict metabolite biomarkers for incide
 
 ---
 
-[Analysis Report](https://github.com/DongL/Data-Visualization/blob/master/Diabetes_risk_prediction.html)
+[Analysis Report(html)](https://github.com/DongL/Data-Visualization/blob/master/Diabetes_risk_prediction.html)
+
+[Transformer](https://github.com/DongL/Data-Visualization/blob/master/transformer/)
 
 The Analysis Report (html file) can be previewed using [Github Html Preview](https://htmlpreview.github.io).
 ---
@@ -191,7 +193,7 @@ This comprehensive analysis successfully identified key clinical features and bl
 
 - **Model Sensitivity**: The current models exhibit lower sensitivity in detecting diabetic cases, suggesting the need for improved recall and precision.
 - **Computational Constraints**: Limited exploration of hyperparameter spaces and model architectures due to resource restrictions.
-- **Advanced Modeling**: Future studies could incorporate deep learning techniques, such as Convolutional Neural Networks (CNNs), to enhance model performance and sensitivity.
+- **Advanced Modeling**: Future studies could incorporate deep learning techniques, such as transformer-based neural networks, to enhance model performance and sensitivity.
 
 **Conclusion**:
 
