@@ -72,6 +72,7 @@ The analysis utilizes a variety of Python libraries for data processing and mach
 
 - `numpy` and `pandas` for data manipulation
 - `scikit-learn` for preprocessing, model training, and evaluation
+- `PyTorch` for building transformer-based deep neural networks
 - `matplotlib` and `seaborn` for data visualization
 - `statsmodels` for statistical analysis
 - Additional tools like `UMAP` for clustering analysis
