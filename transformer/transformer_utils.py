@@ -1,20 +1,22 @@
-import os
 import logging
+import os
+
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torch.utils.data import DataLoader, Dataset
-from sklearn.preprocessing import StandardScaler, LabelEncoder
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import (
-    roc_auc_score,
     accuracy_score,
+    classification_report,
+    f1_score,
     precision_score,
     recall_score,
-    f1_score,
-    classification_report,
+    roc_auc_score,
 )
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+from torch.utils.data import DataLoader, Dataset
+from torch.utils.tensorboard import SummaryWriter
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -119,26 +121,15 @@ def train_one_epoch(
     criterion: nn.Module,
     optimizer: optim.Optimizer,
     device: torch.device,
+    writer: SummaryWriter,
+    epoch: int
 ) -> tuple:
-    """
-    Trains the model for one epoch.
-
-    Args:
-        model (nn.Module): The neural network model.
-        dataloader (DataLoader): DataLoader for training data.
-        criterion (nn.Module): Loss function.
-        optimizer (optim.Optimizer): Optimizer.
-        device (torch.device): Device to perform computations on.
-
-    Returns:
-        tuple: Tuple containing average loss and accuracy for the epoch.
-    """
     model.train()
     running_loss = 0.0
     correct = 0
     total = 0
 
-    for inputs, labels in dataloader:
+    for batch_idx, (inputs, labels) in enumerate(dataloader):
         inputs = inputs.to(device)
         labels = labels.to(device)
 
@@ -153,29 +144,28 @@ def train_one_epoch(
         total += labels.size(0)
         correct += (predicted == labels).sum().item()
 
+        # Log weights and outputs
+        for name, param in model.named_parameters():
+            writer.add_histogram(f'Weights/{name}', param, epoch * len(dataloader) + batch_idx)
+        writer.add_histogram('Outputs', outputs, epoch * len(dataloader) + batch_idx)
+
     avg_loss = running_loss / total
     accuracy = correct / total
-    return avg_loss, accuracy
 
+    # Log training metrics
+    writer.add_scalar('Loss/Train', avg_loss, epoch)
+    writer.add_scalar('Accuracy/Train', accuracy, epoch)
+
+    return avg_loss, accuracy
 
 def evaluate(
     model: nn.Module,
     dataloader: DataLoader,
     criterion: nn.Module,
     device: torch.device,
+    writer: SummaryWriter,
+    epoch: int
 ) -> dict:
-    """
-    Evaluates the model on the validation set.
-
-    Args:
-        model (nn.Module): The neural network model.
-        dataloader (DataLoader): DataLoader for validation data.
-        criterion (nn.Module): Loss function.
-        device (torch.device): Device to perform computations on.
-
-    Returns:
-        dict: Dictionary containing loss and various evaluation metrics.
-    """
     model.eval()
     running_loss = 0.0
     all_labels = []
@@ -191,9 +181,7 @@ def evaluate(
             loss = criterion(outputs, labels)
 
             running_loss += loss.item() * inputs.size(0)
-            probabilities = torch.softmax(outputs, dim=1)[
-                :, 1
-            ]  # Probability of positive class
+            probabilities = torch.softmax(outputs, dim=1)[:, 1]
             _, predicted = torch.max(outputs, 1)
 
             all_labels.extend(labels.cpu().numpy())
@@ -216,8 +204,15 @@ def evaluate(
         "f1_score": f1,
     }
 
-    return metrics
+    # Log evaluation metrics
+    writer.add_scalar('Loss/Validation', avg_loss, epoch)
+    writer.add_scalar('Accuracy/Validation', accuracy, epoch)
+    writer.add_scalar('AUC/Validation', auc, epoch)
+    writer.add_scalar('Precision/Validation', precision, epoch)
+    writer.add_scalar('Recall/Validation', recall, epoch)
+    writer.add_scalar('F1_Score/Validation', f1, epoch)
 
+    return metrics
 
 def save_model(model: nn.Module, path: str):
     """
@@ -230,4 +225,3 @@ def save_model(model: nn.Module, path: str):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     torch.save(model.state_dict(), path)
     logger.info(f"Model saved to {path}")
-
